@@ -35,8 +35,8 @@ class _postlistState extends State<postlist> {
                       children: [
                         ListTile(
 
-                          title: Text("PATIENT NAME:" +(sshot.data![index].name.toString()) ),
-                          subtitle: Text("ADDRESS:" +(sshot.data![index].address.toString()) + "\n" +"PHONE NUMBER :" + (sshot.data![index].phone.toString())+"\n"+"SYMPTOMS" + (sshot.data![index].symptoms.toString())+"\n"+"STATUS" + (sshot.data![index].status.toString())),
+                          title: Text("PATIENT NAME :" +(sshot.data![index].name.toString()) ),
+                          subtitle: Text("ADDRESS :" +(sshot.data![index].address.toString()) + "\n" +"PHONE NUMBER :" + (sshot.data![index].phone.toString())+"\n"+"SYMPTOMS :" + (sshot.data![index].symptoms.toString())+"\n"+"STATUS :" + (sshot.data![index].status.toString())),
 
                         ),
                       ],
