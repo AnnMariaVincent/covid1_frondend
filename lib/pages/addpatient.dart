@@ -1,3 +1,4 @@
+import 'package:covidapplication/service/postservice.dart';
 import 'package:flutter/material.dart';
 
 class add extends StatefulWidget {
@@ -8,6 +9,23 @@ class add extends StatefulWidget {
 }
 
 class _addState extends State<add> {
+  String getname="",getaddress="",getphone="",getsymp="",getstatus="";
+  TextEditingController name=new TextEditingController();
+  TextEditingController address=new TextEditingController();
+  TextEditingController phone=new TextEditingController();
+  TextEditingController symp=new TextEditingController();
+  TextEditingController status=new TextEditingController();
+  void sendbutton()async{
+    final response=await PostApiService().sendbutton(name.text, address.text, phone.text, symp.text,status.text);
+    if (response['status'] == 'sucess') {
+      print("sucessfully add");
+    }
+    else {
+      print("error");
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,6 +59,7 @@ backgroundColor: Colors.pinkAccent,
           SizedBox(height: 60,width: 250,),
           SizedBox(height: 30,),
           TextField(
+            controller: name,
 
             decoration: InputDecoration(
                 labelText: "Patient Name",
@@ -51,6 +70,7 @@ backgroundColor: Colors.pinkAccent,
 
           SizedBox(height: 20,),
           TextField(
+            controller: phone,
 
 
             decoration: InputDecoration(
@@ -62,6 +82,7 @@ backgroundColor: Colors.pinkAccent,
 
           SizedBox(height: 20,),
           TextField(
+            controller: address,
 
 
             decoration: InputDecoration(
@@ -72,6 +93,7 @@ backgroundColor: Colors.pinkAccent,
           ),
           SizedBox(height: 20,),
           TextField(
+            controller: symp,
 
 
             decoration: InputDecoration(
@@ -82,6 +104,7 @@ backgroundColor: Colors.pinkAccent,
           ),
           SizedBox(height: 20,),
           TextField(
+            controller: status,
 
 
             decoration: InputDecoration(
@@ -105,12 +128,9 @@ backgroundColor: Colors.pinkAccent,
               ),
               onPressed: () {
 
+            sendbutton();
 
-
-
-
-
-              },
+                },
               child: Text("SUBMIT"),
             ),
           ),
