@@ -13,8 +13,7 @@ class _addState extends State<add> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.pinkAccent,
-
+backgroundColor: Colors.pinkAccent,
         ),
       ),
     );
